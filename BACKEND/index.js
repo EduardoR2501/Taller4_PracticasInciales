@@ -8,6 +8,8 @@ const registrarUsuarioRouter = require('./Modulos/RegistrarUsuario');
 const consultaDeExistenciaRouter = require('./Modulos/ConsultaExistencia');
 const reestablecerContraRouter = require('./Modulos/ReestablecerContra'); // Importar el nuevo enrutador
 const verificarRegistroAcademicoRouter = require('./Modulos/VerificarRegistroAcademico');
+const CrearPubli = require('./Modulos/AgregarPublicacion');
+const ConsultarPublicaciones = require('./Modulos/Publicaciones');
 
 app.use(cors()); // Habilitar CORS para permitir solicitudes desde el frontend
 
@@ -16,6 +18,8 @@ app.use(registrarUsuarioRouter);
 app.use(consultaDeExistenciaRouter);
 app.use(reestablecerContraRouter); // Usar el nuevo enrutador
 app.use(verificarRegistroAcademicoRouter);
+app.use(CrearPubli);
+app.use(ConsultarPublicaciones);
 
 // Iniciar el servidor
 app.listen(port, () => {
